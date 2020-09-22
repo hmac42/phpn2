@@ -33,6 +33,58 @@ Inversement, la suite de Fibonacci intervient dans l'écriture des réduites de 
  plus l'approximation sera précise. Amusez-vous à calculer ce quotient (valeur au rang n / valeur au rang (n-1)) sur plusieurs valeurs pour constater cette approximation.</p><br>";
  echo $q;
 
- $r = "<h3>Resolution</h3>";
+ $r = "<h3>Resolution 1</h3>";
  echo $r;
+
+/*function calcFibonacci($nmr1,$nmr2) {
+    $mois = 12;
+    for ($mois=1; $mois<=11; $mois++ ){
+         $rslt = $nmr1 + $nmr2;
+         $nmr1 = $nmr2;
+         $nmr2 = $rslt;
+        }
+        return $rslt;
+         
+        }
+    echo calcFibonacci(0,1);*/
+
+
+$r1 = "<h3>Resolution 2</h3>";
+
+/*EXEMLPE DE RECURSIVITE
+
+function puissance($chiffre, $nbre_exposant)
+{
+        //On vérifie si on doit encore passer le résultat à la puissance $chiffre
+        if($nbre_exposant > 0)
+        {
+                //On appelle notre fonction
+                return puissance($chiffre/$chiffre, $nbre_exposant - 1);
+        }
+        //Sinon on retourne le résultat
+        return $chiffre;
+}
+ 
+//On définit le chiffre qui sera mis à sa puissance
+$chiffre = 2;
+ 
+//On choisit le nombre de fois où $chiffre sera mis à sa puissance
+$nbre_exposant = 4;
+ 
+//On affiche le résultat en faisant appel à notre fonction
+echo puissance($chiffre, $nbre_exposant);*/
+
+
+
+function puissance($chiffre, $nFois){
+    $chiffre1 = $chiffre+$chiffre;
+       
+        if( $nFois >=0){
+        echo puissance($chiffre+$chiffre1, $nFois-1);
+        }
+
+        echo $chiffre.=" ";
+}
+ echo puissance(1,12);//EXERCICE PAS FINI!!!
+
 ?>
