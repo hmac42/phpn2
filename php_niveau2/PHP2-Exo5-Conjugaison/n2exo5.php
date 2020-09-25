@@ -44,17 +44,25 @@ echo $r;
 function conjVerbe($verbe) {
     $inf ="er";
     $conj = array("e", "es", "e", "ons", "ez","ent");
+    $conjger = array('e', 'es', 'e', 'ions', 'iez', 'ent' );
     $persons = array("Je", "Tu", "Il", "Nous", "Vous", "Ils");
 
-   
+   if (preg_match("/ger\Z/", $verbe)){
     for($i=0;$i<=count($conj)-1;$i++){
-      $conjC = count($conj);
-      $verbeConj = str_replace($inf, $conj[$i], $verbe);
+     $verbeConj = str_replace($inf, $conjger[$i], $verbe);
       echo $persons[$i]." ".$verbeConj."<br>";
-}  
-}
+    }
+    } 
+    else if (preg_match("/er\Z/", $verbe)){
+    for($i=0;$i<=count($conjger)-1;$i++){
+    $verbeConj = str_replace($inf, $conj[$i], $verbe);
+    echo $persons[$i]." ".$verbeConj."<br>";
+    }
+    }
+    }
+
 //$verbe = "commencer"; 
-echo conjVerbe("programmer");
+echo conjVerbe("manger");
 
 
 ?>
